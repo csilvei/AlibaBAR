@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import persistence.Cliente;
+import persistence.Log;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -25,6 +26,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import javax.swing.event.ChangeListener;
+
+import busines.Buteco;
+
 import javax.swing.event.ChangeEvent;
 
 public class Tela_Cadastro extends JFrame {
@@ -34,6 +38,9 @@ public class Tela_Cadastro extends JFrame {
 	private JTextField txtcpf;
 	private JTextField txtidade;
 	private JTextField txtnumsocio;
+	private Buteco     bar;
+	private Log        log;
+	
 
 	/**
 	 * Launch the application.
@@ -50,7 +57,10 @@ public class Tela_Cadastro extends JFrame {
 			}
 		});
 	}
-
+	public void params(Buteco Bar,Log log){
+		this.bar = Bar;
+		this.log = log;
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -61,8 +71,7 @@ public class Tela_Cadastro extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		Cliente Cli = new Cliente("","","",0,0);
-		
+		Cliente Cli = new Cliente("","","","","");
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
@@ -95,7 +104,7 @@ public class Tela_Cadastro extends JFrame {
 		JRadioButton rdbtnMasculino = new JRadioButton("Masculino");
 		JRadioButton rdbtnFeminino = new JRadioButton("Feminino");
 		
-		
+		rdbtnFeminino.setSelected(true);
 		rdbtnMasculino.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -118,27 +127,63 @@ public class Tela_Cadastro extends JFrame {
 				String nome = "";
 				String idade = "";
 				String cpf = "";
-				boolean sexo = true; //true Masculino false Feminino  
+				String socio = "";
+				boolean sexo = true; //true Masculino false Feminino 
+				boolean erro = false;
+				
+				 nome = "";
+				 idade = "";
+				 cpf = "";
+				 socio = "";
+				 sexo = true; //true Masculino false Feminino 
+				 erro = false;
 				
 				nome  = txtNome.getText();
 				idade = txtidade.getText();
 				cpf   = txtcpf.getText();
+				socio = txtnumsocio.getText();
 				
 				if(Cli.validaNome(nome) == true){
 					JOptionPane.showMessageDialog(txtNome, "Por Favor Informe o seu nome!", "Mensagem de Erro", 0);
 					txtNome.setText("");
 					txtNome.grabFocus();
+					erro = true;
 				}else if(Cli.validaCPF(cpf) == false){
 					JOptionPane.showMessageDialog(txtcpf, "Informe o CPF somente com Números!(max. 11 digitos)", "Mensagem de Erro", 0);
 					txtcpf.setText("");
 					txtcpf.grabFocus();
+					erro = true;
 				}else if(Cli.validaIdade(idade) == false){
 					JOptionPane.showMessageDialog(txtidade, "Informa uma Idade valida!", "Mensagem de Erro", 0);
 					txtidade.setText("");
 					txtidade.grabFocus();
+					erro = true;
+				}
+				
+				if(rdbtnFeminino.isSelected() == true){
+					sexo = false;
+				}
+				
+				if(erro == false){
+					
+					Cli.setNome(nome);
+					Cli.setCpf(cpf);
+					Cli.setIdade(idade);
+					Cli.setSocio(socio);
+					if(sexo == true){
+					Cli.setGenero("M");
+					}else{
+						Cli.setGenero("F");
+					}
+					if(bar.InsereCliente(Cli) == true){
+						JOptionPane.showMessageDialog(txtnumsocio, "Bem Vindo ao AlibaBAR!", "Mensagem de Boas Vindas", 0);
+						log.Escreve(bar.BuscaCliente(cpf), true);
+						dispose();
+					}else{
+						JOptionPane.showMessageDialog(txtnumsocio, "Desculpe seu nome não esta na lista!", "Mensagem de Erro", 0);
+					}
 				}	
 			}
-			
 		});
 		
 		JButton btnCancelar = new JButton("Cancelar");

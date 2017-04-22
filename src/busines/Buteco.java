@@ -31,56 +31,57 @@ public class Buteco {
 		return false;
 	}
 	
-	public boolean MostraClientes(){
-		boolean achou = false;
-		int cont = 0;
+	public String MostraClientes(){
+		String cliente = "";
+		
 		for(Cliente c : Cliente) {
-			  System.out.println("Nome:" + c.getNome() + "\n" +
-					  			 "Cpf:" + c.getCpf()  + "\n" +
-					  			 "Gênero:" + c.getGenero() + "\n" +
-					  			 "Idade:" + c.getIdade() + "\n"); 
-			  cont++;
+			  cliente = cliente + "\n" +
+					    "Nome:" + c.getNome() + "\n" +
+					  	"Cpf:" + c.getCpf()  + "\n" +
+					  	"Gênero:" + c.getGenero() + "\n" +
+					  	"Idade:" + c.getIdade() + "\n"; 
+			  
 		}
-		if (cont > 0){
-			return true;
-		}
-		else return false;
+		return cliente;
 	}
 	
-	public Boolean BuscaCliente(String cpf){
-		boolean achou = false;
+	public String BuscaCliente(String cpf){
+		String cliente = "";
 		
 		Iterator<Cliente> it = Cliente.iterator();
 		while (it.hasNext()) {
 		   Cliente clie = (persistence.Cliente) it.next();
 		   if (clie.getCpf().startsWith(cpf)){
-			   System.out.println("Nome:" + clie.getNome() + "\n" +
+			   cliente ="Nome:" + clie.getNome() + "\n" +
 			  			 "Cpf:" + clie.getCpf()  + "\n" +
 			  			 "Gênero:" + clie.getGenero() + "\n" +
-			  			 "Idade:" + clie.getIdade() + "\n");  
-			return true;   
+			  			 "Idade:" + clie.getIdade() + "\n" + 
+			   			 "Numero Sócio: " + clie.getSocio();
+			return cliente;   
 		   }
 	    }
-		return false;
+		return cliente;
 	}
 	
-	public boolean BuscaQuantidade(){
+	
+	public String BuscaQuantidade(){
 		int cont = 0,contm = 0,contf = 0,contS = 0, contN = 0;
 		double percentualM = 0;
 		double percentualF = 0;
+		String Retorno = null;
 		
 		
 		Iterator<persistence.Cliente> it = Cliente.iterator();
 		while (it.hasNext()) {
 			Cliente clie = (persistence.Cliente) it.next();
 				cont ++;
-			if (clie.getGenero() == "Masculino"){
+			if (clie.getGenero() == "M"){
 				contm ++;
 			}
 			else {
 				contf ++;
 			}
-			if (clie.getSocio() == 0){
+			if (clie.getSocio() == "0"){
 				contN ++;
 			}
 			else{
@@ -91,18 +92,15 @@ public class Buteco {
 		percentualM = (100*contm)/cont;
 		percentualF = 100 - percentualM;
 		
-		System.out.println("Qtd. Clientes Homens :" + contm + "\n" );
-		System.out.println("Qtd. Clientes Mulheres :" + contf + "\n" );
-		System.out.println("Percentual Homens :" + percentualM + "\n" );
-		System.out.println("Percentual Mulheres :" + percentualF + "\n" );
-		System.out.println("Qtd. Sócios :" + contS + "\n" );
-		System.out.println("Qtd. Não Sócios :" + contN + "\n" );
-		if (cont > 0) {
-			return true;
-		}
-		else{
-			return false;
-		}
+		Retorno =  
+		"Qtd. Clientes Homens :" + contm + "\n"      +
+		"Qtd. Clientes Mulheres :" + contf + "\n"    + 
+		"Percentual Homens :" + percentualM + "\n"   +
+		"Percentual Mulheres :" + percentualF + "\n" +
+		"Qtd. Sócios :" + contS + "\n"               + 
+		"Qtd. Não Sócios :" + contN + "\n";
+		
+		return Retorno;
 	}
 	
 }

@@ -1,0 +1,196 @@
+22/04/17 16:16
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:12
+
+22/04/17 16:16
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:12
+
+22/04/17 16:16
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:12
+
+22/04/17 16:17
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:12
+
+22/04/17 16:17
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:12
+
+22/04/17 16:17
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+
+22/04/17 16:18
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+
+22/04/17 16:18
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+
+22/04/17 16:28
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:33
+
+22/04/17 16:29
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:33
+
+22/04/17 16:29
+Entrou no Bar
+Nome:maria
+Cpf:222
+Gênero:M
+Idade:34
+
+22/04/17 16:41
+Entrou no Bar
+Nome:carlos 
+Cpf:11
+Gênero:M
+Idade:45
+Numero Sócio: 66
+22/04/17 16:41
+Entrou no Bar
+Nome:Marcelos
+Cpf:222
+Gênero:M
+Idade:67
+Numero Sócio: 0
+22/04/17 16:41
+Entrou no Bar
+Nome:maria
+Cpf:333
+Gênero:M
+Idade:12
+Numero Sócio: 3
+22/04/17 16:44
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:45
+Numero Sócio: 111
+22/04/17 16:44
+Entrou no Bar
+Nome:pedro
+Cpf:222
+Gênero:M
+Idade:45
+Numero Sócio: 222
+22/04/17 16:45
+Entrou no Bar
+Nome:maria
+Cpf:333
+Gênero:M
+Idade:67
+Numero Sócio: 0
+22/04/17 16:45
+Entrou no Bar
+Nome:joao
+Cpf:444
+Gênero:M
+Idade:34
+Numero Sócio: 0
+22/04/17 16:49
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+Numero Sócio: 12
+22/04/17 16:49
+Entrou no Bar
+Nome:paulo
+Cpf:222
+Gênero:F
+Idade:45
+Numero Sócio: 45
+22/04/17 16:50
+Entrou no Bar
+Nome:maria
+Cpf:333
+Gênero:F
+Idade:34
+Numero Sócio: 
+22/04/17 16:50
+Entrou no Bar
+Nome:joaona
+Cpf:444
+Gênero:F
+Idade:33
+Numero Sócio: 
+22/04/17 16:50
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+Numero Sócio: 12
+22/04/17 16:50
+Saiu do Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:34
+Numero Sócio: 12
+22/04/17 16:52
+Entrou no Bar
+Nome:carlos
+Cpf:111
+Gênero:M
+Idade:23
+Numero Sócio: 32
+22/04/17 16:52
+Entrou no Bar
+Nome:maria
+Cpf:222
+Gênero:F
+Idade:12
+Numero Sócio: 
+22/04/17 16:52
+Entrou no Bar
+Nome:paul
+Cpf:333
+Gênero:M
+Idade:33
+Numero Sócio: 2
+22/04/17 16:52
+Entrou no Bar
+Nome:joaon
+Cpf:444
+Gênero:F
+Idade:33
+Numero Sócio: 

@@ -3,11 +3,11 @@ package persistence;
 public class Cliente {
 	private String nome;
 	private String cpf;
-	private int idade;
+	private String idade;
 	private String genero;
-	private int socio;
+	private String socio;
 
-	public Cliente(String nome, String cpf, String genero, int idade, int socio) {
+	public Cliente(String nome, String cpf, String genero, String idade, String socio) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.genero = genero;
@@ -31,11 +31,11 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 
@@ -47,11 +47,11 @@ public class Cliente {
 		this.genero = genero;
 	}
 
-	public int getSocio() {
+	public String getSocio() {
 		return socio;
 	}
 
-	public void setSocio(int socio) {
+	public void setSocio(String socio) {
 		this.socio = socio;
 	}
 	
@@ -78,7 +78,7 @@ public class Cliente {
 		  return Retorno;
 		}
 		
-		if (cpf.length() < 11 || cpf.length() > 11){
+		if (cpf.length() > 11){
 			Retorno = false;
 			return Retorno;
 		}
@@ -111,4 +111,5 @@ public class Cliente {
 		return Retorno;
 		
 	}
+	
 }
